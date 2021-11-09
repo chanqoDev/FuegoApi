@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-
+const stripe = require("stripe");
+("sk_test_YOURAPIKEY GOES HERE");
 // http methods :  GET, POST, PUT, DELETE, PATCH
 // define an api endpoint (route, )
 app.get("/api", (req, res) => {
