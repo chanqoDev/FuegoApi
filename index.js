@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const stripe = require("stripe")("sk_test_");
+const stripe = require("stripe")("sk_test__ENTERYOURS");
 // http methods :  GET, POST, PUT, DELETE, PATCH
 // define an api endpoint (route, )
 app.get("/api", (req, res) => {
@@ -22,7 +22,7 @@ app.post("/checkout", async (req, res) => {
     payment_method_types: ["card"],
     line_items: [
       {
-        price: "YOUR_price_1",
+        price: "_ENTERYOURS",
       },
     ],
     success_url:
@@ -39,7 +39,7 @@ app.post("/webhook", async (req, res) => {
   let data;
   let eventType;
   // Check if webhook signing is configured.
-  const webhookSecret = "whsec_YOURSGOES HERE";
+  const webhookSecret = "whsec_ENTERYOURS";
 
   if (webhookSecret) {
     // Retrieve the event by verifying the signature using the raw body and secret.
